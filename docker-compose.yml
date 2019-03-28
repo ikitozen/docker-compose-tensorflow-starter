@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  tf:
+    build: .
+    image: kik/kik1
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    user: "1000:"
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks:/tf/notebooks
